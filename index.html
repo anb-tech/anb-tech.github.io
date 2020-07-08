@@ -11,7 +11,7 @@
 	<script src="js/libs.min.js" defer></script>
 </head>
 <body>
-	<header class="header">
+	<header class="header page-section">
 		<div class="container">
 			<div class="header__inner">
 				<a class="logo" href="#">
@@ -41,8 +41,6 @@
 				</nav>
 			</div>
 		</div>
-	</header>
-	<section class="top">
 		<div class="container">
 			<div class="top__inner">
 				<div class="top__inner-elem">
@@ -64,11 +62,14 @@
 			</div>
 		</div>
 	</div>
-</section>
+	<div class="scroll-btn">
+		<a class="scroll-btn__link" src="images/arrow-down.svg" href="#"></a>
+	</div>
+</header>
 
-<section class="about">
+<section class="about page-section">
 	<div class="container">
-		<div class="about__title">
+		<div class="about__title title">
 			<h3 class="about__title-header">
 				Обо мне
 			</h3>
@@ -81,37 +82,168 @@
 			</div>
 			<div class="about__inner-elem">
 				<p class="about__inner-info">
-					
+
 				</p>
 			</div>
 		</div>
 	</div>
+	<div class="scroll-btn">
+		<a class="scroll-btn__link" src="images/arrow-down.svg" href="#"></a>
+	</div>
 </section>
 
-<section class="skills">
+<section class="skills page-section">
 	<div class="container">
-		<div class="skills__title">
+		<div class="skills__title title">
 			<h3 class="skills__title-header">
 				Навыки
 			</h3>
 		</div>
+		<!-- skills-slider -->
 		<div class="skills__subtitle">
 			<h4 class="skills__subtitle-header">
-				
+
 			</h4>
 		</div>
 		<div class="skills__slider">
 			<div class="skills__slider-box">
-				<div class="skills__inner-title">оскар 2020</div>
-				<div class="skills__inner-data">сентябрь 2020</div>
-				<div class="skills__inner-btn">
-						<img src="images/view-btn.svg" alt="">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/html-logo.svg" alt="html-logo">
+				</div>
+				<h5 class="skills__slider-title">HTML 5</h5>
+				<div class="rating rating-js">
+					<div class="rating-item active" data-rate="1"></div>
+					<div class="rating-item active" data-rate="2"></div>
+					<div class="rating-item active" data-rate="3"></div>
+					<div class="rating-item active" data-rate="4"></div>
+					<div class="rating-item" data-rate="5"></div>
+				</div>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/css-logo.svg" alt="css-logo">
+				</div>
+				<h5 class="skills__slider-title">CSS 3</h5>
+				<div class="rating rating-js">
+					<div class="rating-item active" data-rate="1"></div>
+					<div class="rating-item active" data-rate="2"></div>
+					<div class="rating-item active" data-rate="3"></div>
+					<div class="rating-item" data-rate="4"></div>
+					<div class="rating-item" data-rate="5"></div>
+				</div>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/sass-logo.svg" alt="sass-logo">
+				</div>
+				<h5 class="skills__slider-title">SASS</h5>
+				<div class="rating">
+					<div class="rating-item active" data-rate="1"></div>
+					<div class="rating-item active" data-rate="2"></div>
+					<div class="rating-item active" data-rate="3"></div>
+					<div class="rating-item" data-rate="4"></div>
+					<div class="rating-item" data-rate="5"></div>
+				</div>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/javascript-logo.svg" alt="javascript-logo">
+				</div>
+				<h5 class="skills__slider-title">javaScript</h5>
+				<div class="rating">
+					<div class="rating-item active" data-rate="1"></div>
+					<div class="rating-item" data-rate="2"></div>
+					<div class="rating-item" data-rate="3"></div>
+					<div class="rating-item" data-rate="4"></div>
+					<div class="rating-item" data-rate="5"></div>
+				</div>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/jquery-logo.svg" alt="jquery-logo">
+				</div>
+				<h5 class="skills__slider-title">JQuery</h5>
+				<div class="rating">
+					<div class="rating-item active" data-rate="1"></div>
+					<div class="rating-item" data-rate="2"></div>
+					<div class="rating-item" data-rate="3"></div>
+					<div class="rating-item" data-rate="4"></div>
+					<div class="rating-item" data-rate="5"></div>
 				</div>
 			</div>
 		</div>
+		<!-- instuments-slider -->
+		<div class="skills__subtitle">
+			<h4 class="skills__subtitle-header">
+
+			</h4>
+		</div>
+		<div class="skills__slider">
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/sublime-text.svg" alt="sublime-text">
+				</div>
+				<h5 class="skills__slider-title">Sublime Text 3</h5>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/gulp-logo.svg" alt="gulp-logo">
+				</div>
+				<h5 class="skills__slider-title">Gulp</h5>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/git-logo.svg" alt="git-logo">
+				</div>
+				<h5 class="skills__slider-title">Git</h5>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/figma-logo.svg" alt="figma-logo">
+				</div>
+				<h5 class="skills__slider-title">Figma</h5>
+			</div>
+			<div class="skills__slider-box">
+				<div class="skills__slider-logo">
+					<img class="skills__slider-image" src="images/photoshop-logo.svg" alt="photoshop-logo">
+				</div>
+				<h5 class="skills__slider-title">Adobe Photoshop</h5>
+			</div>
+		</div> 
 	</div>
-</div>
+	<div class="scroll-btn">
+		<a class="scroll-btn__link" src="images/arrow-down.svg" href="#"></a>
+	</div>
+</section>
+
+<section class="projects page-section">
+	<div class="projects__title title">
+		<h3 class="projects__title-header">
+			Проекты
+		</h3>
+	</div>
+	<div class="scroll-btn">
+		<a class="scroll-btn__link" src="images/arrow-down.svg" href="#"></a>
+	</div>
+</section>
+
+<section class="contacts page-section">
+	<div class="contacts__title title">
+		<h3 class="contacts__title-header">
+			Контакты
+		</h3>
+	</div>
+	<div class="contacts__title">
+		<h5 class="contacts__title-header">
+			Контакты
+		</h5>
+	</div>
+	<p class="contacts__message">
+		Написать сообщение
+	</p>
 </section>
 
 </body> 
 </html>
+
+

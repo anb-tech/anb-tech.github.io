@@ -442,3 +442,38 @@ template {
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+.rating {
+  display: flex;
+  max-width: 120px;
+  justify-content: space-between;
+}
+
+.rating-item {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-image: url(../images/smile-sad.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.active {
+  background-image: url(../images/smile-happy.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.skills__slider-logo {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.skills__slider-image {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
