@@ -11,7 +11,7 @@
 	<script src="js/libs.min.js" defer></script>
 </head>
 <body>
-	<header class="header page-section">
+	<header class="header page-section" id="home">
 		<div class="page-section__overlay">
 			<div class="container">
 				<div class="header__inner">
@@ -21,37 +21,49 @@
 					<nav class="menu">
 						<ul class="menu__list">
 							<li class="menu__list-item">
-								<a class="menu__list-link" href="">Главная</a>
+								<a class="menu__list-link ru" href="#home">Главная</a>
+								<a class="menu__list-link eng" href="#home">Home</a>
 							</li>
 							<li class="menu__list-item">
-								<a class="menu__list-link" href="">Обо мне</a>
+								<a class="menu__list-link ru" href="#about">Обо мне</a>
+								<a class="menu__list-link eng" href="#about">About me</a>
 							</li>
 							<li class="menu__list-item">
-								<a class="menu__list-link" href="">Навыки</a>
+								<a class="menu__list-link ru" href="#skills">Навыки</a>
+								<a class="menu__list-link eng" href="#skills">Skills</a>
 							</li>
 							<li class="menu__list-item">
-								<a class="menu__list-link" href="">Проекты</a>
+								<a class="menu__list-link ru" href="#projects">Проекты</a>
+								<a class="menu__list-link eng" href="#projects">Portfolio</a>
 							</li>
 							<li class="menu__list-item">
-								<a class="menu__list-link" href="">Контакты</a>
+								<a class="menu__list-link ru" href="#contacts">Контакты</a>
+								<a class="menu__list-link eng" href="#contacts">Contacts</a>
 							</li>
 						</ul>
 					</nav>
 				</div>
 				<div class="top__inner">
 					<div class="top__inner-elem">
-						<h1 class="top__inner-name">
+						<h1 class="top__inner-name ru">
 							Александр Беляев
+						</h1>
+						<h1 class="top__inner-name eng">
+							Alexander Belyaev
 						</h1>
 					</div>
 					<div class="top__inner-elem top__inner-job">
-						<h2 class="top__inner-subtitle">
-							Front-end Разработчик
+						<h2 class="top__inner-subtitle ru">
+							Front-end разработчик
 						</h2>
-						<p class="top__inner-info">23 года, Москва</p>
+						<h2 class="top__inner-subtitle eng">
+							Front-end developer
+						</h2>
+						<h5 class="top__inner-info ru">23 года, Москва</h5>
+						<h5 class="top__inner-info eng">23 years old, Moscow</h5>
 					</div>
 					<div class="top__inner-elem top__inner-languges">
-						<div class="top__inner-ru">
+						<div class="top__inner-ru active-language">
 							RU
 						</div>	
 						<div class="top__inner-slash">
@@ -63,6 +75,7 @@
 					</div>
 				</div>
 				<div class="top__slide">
+					<img class="top__slide-image" src="images/top-main.png" alt="front-end">
 				</div>
 			</div>
 		</div>
@@ -71,189 +84,357 @@
 	<section class="about page-section" id="about">
 		<div class="page-section__overlay">
 			<div class="container">
-				<div class="about__title title">
-					<h3 class="about__title-header">
+				<div class="about__title">
+					<h3 class="about__title-header title ru">
 						Обо мне
+					</h3>
+					<h3 class="about__title-header title eng">
+						About me
 					</h3>
 				</div>
 				<div class="about__inner">
-					<div class="about__inner-elem">
-						<div class="about__inner-photo">
-							<img class="about__inner-image" src="" alt="my-photo">
-						</div>
+					<div class="about__inner-elem about__inner-text">
+						<p class="about__inner-info ru">
+							Привет! Я Саша - Front-end разработчик из Москвы.
+							Я интересуюсь Веб-разработкой и всем, что с ней связано.
+						</p>
+						<p class="about__inner-info eng">
+							Hi, I'm Sasha – Front-end developer from Moscow. 
+							I'm interested in Web Development and everything connected with it.
+						</p>
+						<p class="about__inner-info ru">
+							Я обучаюсь на бакалаврской программе «Инфокоммуникационные технологии и системы связи» в Национальном исследовательском университете 
+							«Высшая школа экономики».
+						</p>
+						<p class="about__inner-info eng">
+							I'm studying at Bachelor’s Programme 'Information and Communication Technologies and Systems' in National Research University 'Higher School of Economics'.
+						</p>
+						<p class="about__inner-info ru">
+							Всегда открыт к интересным проектам
+							с замечательными людьми.
+						</p>
+						<p class="about__inner-info eng">
+							Ready to implement excellent projects
+							with wonderful people.
+						</p>
+						<div class="about__skills">
+							<div class="about__skills-elem">
+								<p class="about__inner-info ru">
+									Мои навыки расскажут обо мне больше.
+								</p>
+								<p class="about__inner-info eng">
+									My skills will tell you more.
+								</p>
+							</div>
+							<div class="about__skills-elem about__inner-scroll">
+								<div class="scroll-btn">
+									<a class="scroll-btn__link animate__animated animate__fadeInDown animate__infinite animate__slower" href="#skills">
+										<img src="images/down-arrow-active.png" alt="arrow-to-skills" class="scroll-btn__img">
+									</a>
+								</div>
+							</div>
+						</div>		
 					</div>
 					<div class="about__inner-elem">
-						<p class="about__inner-info">
-							Привет, я Саша
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto quia alias nihil recusandae! Voluptatum, ea velit quaerat blanditiis nostrum tenetur deleniti recusandae quo. Deserunt, possimus, nisi. Officiis porro error modi dolorum repellat recusandae. Mollitia beatae, laudantium nihil, minima ipsa non sunt accusantium placeat similique necessitatibus nisi accusamus distinctio repellendus qui praesentium illo animi perferendis cum corporis, consequatur 
-						</p>
+						<div class="about__inner-photo">
+							<img class="about__inner-image" src="images/my-main.jpg" alt="my-photo">
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="scroll-btn">
-			<a class="scroll-btn__link" href="#skills">
-				<img src="images/arrow-down.svg" alt="" class="scroll-btn__img">
-			</a>
 		</div>
 	</section>
 
 	<section class="skills page-section" id="skills">
 		<div class="page-section__overlay">
 			<div class="container">
-				<div class="skills__title title">
-					<h3 class="skills__title-header">
+				<div class="skills__title">
+					<h3 class="skills__title-header title ru">
 						Навыки
+					</h3>
+					<h3 class="skills__title-header title eng">
+						Skills
 					</h3>
 				</div>
 				<!-- skills-slider -->
 				<div class="skills__subtitle">
-					<h4 class="skills__subtitle-header">
+					<h4 class="skills__subtitle-header ru">
 						Мой уровень владения различных инструментов веб-разработки
 					</h4>
-				</div>
-				<div class="skills__slider">
-					<div class="skills__slider-box">
-						<div class="skills__slider-logo">
-							<img class="skills__slider-image" src="images/html-logo.svg" alt="html-logo">
-						</div>
-						<h5 class="skills__slider-title">HTML 5</h5>
-						<div class="rating rating-js">
-							<div class="rating-item active" data-rate="1"></div>
-							<div class="rating-item active" data-rate="2"></div>
-							<div class="rating-item active" data-rate="3"></div>
-							<div class="rating-item active" data-rate="4"></div>
-							<div class="rating-item" data-rate="5"></div>
-						</div>
-					</div>
-					<div class="skills__slider-box">
-						<div class="skills__slider-logo">
-							<img class="skills__slider-image" src="images/css-logo.svg" alt="css-logo">
-						</div>
-						<h5 class="skills__slider-title">CSS 3</h5>
-						<div class="rating rating-js">
-							<div class="rating-item active" data-rate="1"></div>
-							<div class="rating-item active" data-rate="2"></div>
-							<div class="rating-item active" data-rate="3"></div>
-							<div class="rating-item" data-rate="4"></div>
-							<div class="rating-item" data-rate="5"></div>
-						</div>
-					</div>
-					<div class="skills__slider-box">
-						<div class="skills__slider-logo">
-							<img class="skills__slider-image" src="images/sass-logo.svg" alt="sass-logo">
-						</div>
-						<h5 class="skills__slider-title">SASS</h5>
-						<div class="rating">
-							<div class="rating-item active" data-rate="1"></div>
-							<div class="rating-item active" data-rate="2"></div>
-							<div class="rating-item active" data-rate="3"></div>
-							<div class="rating-item" data-rate="4"></div>
-							<div class="rating-item" data-rate="5"></div>
-						</div>
-					</div>
-					<div class="skills__slider-box">
-						<div class="skills__slider-logo">
-							<img class="skills__slider-image" src="images/javascript-logo.svg" alt="javascript-logo">
-						</div>
-						<h5 class="skills__slider-title">javaScript</h5>
-						<div class="rating">
-							<div class="rating-item active" data-rate="1"></div>
-							<div class="rating-item" data-rate="2"></div>
-							<div class="rating-item" data-rate="3"></div>
-							<div class="rating-item" data-rate="4"></div>
-							<div class="rating-item" data-rate="5"></div>
-						</div>
-					</div>
-					<div class="skills__slider-box">
-						<div class="skills__slider-logo">
-							<img class="skills__slider-image" src="images/jquery-logo.svg" alt="jquery-logo">
-						</div>
-						<h5 class="skills__slider-title">JQuery</h5>
-						<div class="rating">
-							<div class="rating-item active" data-rate="1"></div>
-							<div class="rating-item" data-rate="2"></div>
-							<div class="rating-item" data-rate="3"></div>
-							<div class="rating-item" data-rate="4"></div>
-							<div class="rating-item" data-rate="5"></div>
-						</div>
-					</div>
-				</div>
-				<!-- instuments-slider -->
-				<div class="skills__subtitle">
-					<h4 class="skills__subtitle-header">
-						Мои любимые программы
+					<h4 class="skills__subtitle-header eng">
+						My proficiency in various web development tools
 					</h4>
 				</div>
+				<div class="skills__inner">
+					<div class="slider-arrow__back"> <!-- next arrow in the edn of slider -->
+						<img class="slider-arrow__back-img" id="color" src="images/left-arrow.svg" alt="back">
+					</div>
+					<div class="skills__slider">
+						<div class="skills__slider-item">
+							<div class="skills__slider-box">
+								<div class="skills__slider-logo">
+									<img class="skills__slider-image" src="images/html-logo.svg" alt="html-logo">
+								</div>
+								<h5 class="skills__slider-title">HTML 5</h5>
+								<div class="rating rating-js">
+									<div class="rating-item active" data-rate="1"></div>
+									<div class="rating-item active" data-rate="2"></div>
+									<div class="rating-item active" data-rate="3"></div>
+									<div class="rating-item" data-rate="4"></div>
+									<div class="rating-item" data-rate="5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="skills__slider-item">
+							<div class="skills__slider-box">
+								<div class="skills__slider-logo">
+									<img class="skills__slider-image" src="images/css-logo.svg" alt="css-logo">
+								</div>
+								<h5 class="skills__slider-title">CSS 3</h5>
+								<div class="rating rating-js">
+									<div class="rating-item active" data-rate="1"></div>
+									<div class="rating-item active" data-rate="2"></div>
+									<div class="rating-item" data-rate="3"></div>
+									<div class="rating-item" data-rate="4"></div>
+									<div class="rating-item" data-rate="5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="skills__slider-item">
+							<div class="skills__slider-box">
+								<div class="skills__slider-logo">
+									<img class="skills__slider-image" src="images/sass-logo.svg" alt="sass-logo">
+								</div>
+								<h5 class="skills__slider-title">SASS</h5>
+								<div class="rating">
+									<div class="rating-item active" data-rate="1"></div>
+									<div class="rating-item active" data-rate="2"></div>
+									<div class="rating-item" data-rate="3"></div>
+									<div class="rating-item" data-rate="4"></div>
+									<div class="rating-item" data-rate="5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="skills__slider-item">
+							<div class="skills__slider-box">
+								<div class="skills__slider-logo">
+									<img class="skills__slider-image" src="images/javascript-logo.svg" alt="javascript-logo">
+								</div>
+								<h5 class="skills__slider-title">javaScript</h5>
+								<div class="rating">
+									<div class="rating-item active" data-rate="1"></div>
+									<div class="rating-item" data-rate="2"></div>
+									<div class="rating-item" data-rate="3"></div>
+									<div class="rating-item" data-rate="4"></div>
+									<div class="rating-item" data-rate="5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="skills__slider-item">
+							<div class="skills__slider-box">
+								<div class="skills__slider-logo">
+									<img class="skills__slider-image" src="images/jquery-logo.svg" alt="jquery-logo">
+								</div>
+								<h5 class="skills__slider-title">JQuery</h5>
+								<div class="rating">
+									<div class="rating-item active" data-rate="1"></div>
+									<div class="rating-item" data-rate="2"></div>
+									<div class="rating-item" data-rate="3"></div>
+									<div class="rating-item" data-rate="4"></div>
+									<div class="rating-item" data-rate="5"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-arrow__next">
+						<img class="slider-arrow__next-img" src="images/right-arrow.svg" alt="next">
+					</div>
+				</div>		
+				<!-- instuments-slider -->
 				<div class="skills__instruments">
-					<div class="skills__instruments-box">
-						<div class="skills__instruments-elem">
-							<div class="skills__instruments-logo">
-								<img class="skills__instruments-image" src="images/sublime-text.svg" alt="sublime-text">
-							</div>
-							<h5 class="skills__instruments-title">Sublime Text 3</h5>
-						</div>
-						<div class="skills__instruments-elem">
-							<div class="skills__instruments-logo">
-								<img class="skills__instruments-image" src="images/gulp-logo.svg" alt="gulp-logo">
-							</div>
-							<h5 class="skills__instruments-title">Gulp</h5>
-						</div>
+					<div class="skills__subtitle">
+						<h4 class="skills__subtitle-header skills__subtitle-instruments ru">
+							В работе я использую
+						</h4>
+						<h4 class="skills__subtitle-header skills__subtitle-instruments eng">
+							I work in such programs as
+						</h4>
 					</div>
-					<div class="skills__instruments-box">
-						<div class="skills__instruments-elem">
-							<div class="skills__instruments-logo">
-								<img class="skills__instruments-image" src="images/git-logo.svg" alt="git-logo">
+					<div class="skills__instruments-inner">
+						<div class="skills__instruments-slider">
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/sublime-text.svg" alt="sublime-text">
+								</div>
+								<h5 class="skills__instruments-title">Sublime Text 3</h5>
 							</div>
-							<h5 class="skills__instruments-title">Git</h5>
-						</div>
-						<div class="skills__instruments-elem">
-							<div class="skills__instruments-logo">
-								<img class="skills__instruments-image" src="images/figma-logo.svg" alt="figma-logo">
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/atom-logo.svg" alt="sublime-text">
+								</div>
+								<h5 class="skills__instruments-title">Atom</h5>
 							</div>
-							<h5 class="skills__instruments-title">Figma</h5>
-						</div>
-					</div>
-					<div class="skills__instruments-box">
-						<div class="skills__instruments-elem">
-							<div class="skills__instruments-logo">
-								<img class="skills__instruments-image" src="images/photoshop-logo.svg" alt="photoshop-logo">
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/git-logo.svg" alt="git-logo">
+								</div>
+								<h5 class="skills__instruments-title">Git</h5>
 							</div>
-							<h5 class="skills__instruments-title">Adobe Photoshop</h5>
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/figma-logo.svg" alt="figma-logo">
+								</div>
+								<h5 class="skills__instruments-title">Figma</h5>
+							</div>
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/photoshop-logo.svg" alt="photoshop-logo">
+								</div>
+								<h5 class="skills__instruments-title">Adobe Photoshop</h5>
+							</div>
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/gulp-logo.jpg" alt="gulp-logo">
+								</div>
+								<h5 class="skills__instruments-title">Gulp</h5>
+							</div>
+							<div class="skills__instruments-elem">
+								<div class="skills__instruments-logo">
+									<img class="skills__instruments-image" src="images/bem-logo.svg" alt="bem-logo">
+								</div>
+								<h5 class="skills__instruments-title">BEM</h5>
+							</div>
 						</div>
-					</div>
+						<div class="instruments-arrows">
+							<div class="instruments-arrow instruments-arrow__back"> 
+								<img class="instruments-arrow__img instruments-arrow__back-img" src="images/left-arrow.svg" alt="back">
+							</div>
+							<div class="instruments-arrow instruments-arrow__next">
+								<img class="instruments-arrow__img instruments-arrow__next-img" src="images/right-arrow.svg" alt="next">
+							</div>
+						</div>
+					</div> 
 				</div> 
 			</div>
 		</div>
 	</section>
 
-	<section class="projects page-section">
+	<section class="projects page-section" id="projects">
 		<div class="page-section__overlay">
-			<div class="projects__title title">
-				<h3 class="projects__title-header">
-					Проекты
-				</h3>
+			<div class="container">
+				<div class="projects__title">
+					<h3 class="projects__title-header title ru">
+						Проекты
+					</h3>
+					<h3 class="projects__title-header title eng">
+						Portfolio
+					</h3>
+				</div>
+				<div class="projects__inner">
+					<div class="projects-slider">
+						<div class="projects-slider__elem">
+							<div class="projects-slider__box">
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="site-1/index.html">
+										<img class="projects-slider__box-image projects-slider__theater-image" src="images/theater-project.jpg" alt="theater-project">
+									</a>
+									<h4 class="projects-slider__box-info ">
+										Theater-project
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="">
+										<img class="projects-slider__box-image projects-slider__theater-image" src="images/surf-project.jpg" alt="surf-project">
+									</a>
+									<h4 class="projects-slider__box-info">
+										Surf-project
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+									</a>
+									<h4 class="projects-slider__box-info">
+										1
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+									</a>
+									<h4 class="projects-slider__box-info">
+										2
+									</h4>
+								</div>
+							</div>
+						</div>
+						<div class="projects-slider__elem">
+							<div class="projects-slider__box">
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image projects-slider__theater-image" src="images/theater-project.jpg" alt="theater-project">
+									</a>
+									<h4 class="projects-slider__box-info ">
+										1
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+									</a>
+									<h4 class="projects-slider__box-info">
+										2
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+									</a>
+									<h4 class="projects-slider__box-info">
+										3
+									</h4>
+								</div>
+								<div class="projects-slider__box-item">
+									<a class="projects-slider__box-link" href="#">
+										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+									</a>
+									<h4 class="projects-slider__box-info">
+										4
+									</h4>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</div>
-			<div class="scroll-btn">
-				<a class="scroll-btn__link" src="images/arrow-down.svg" href="#"></a>
-			</div>
-		</div>
+		</div>	
 	</section>
 
-	<section class="contacts page-section">
+	<section class="contacts page-section" id="contacts">
 		<div class="page-section__overlay">
-			<div class="contacts__title title">
-				<h3 class="contacts__title-header">
+			<div class="contacts__title">
+				<h3 class="contacts__title-header title ru">
 					Контакты
+				</h3>
+				<h3 class="contacts__title-header title eng">
+					Contacts
 				</h3>
 			</div>
 			<div class="contacts__title">
-				<h5 class="contacts__title-header">
+				<h5 class="contacts__title-header ru">
 					Контакты
 				</h5>
+				<h5 class="contacts__title-header eng">
+					Want to know more or just chat? 
+					You are welcome!
+				</h5>
 			</div>
-			<p class="contacts__message">
+			<p class="contacts__message ru">
 				Написать сообщение
+			</p>
+			<p class="contacts__message eng">
+				Send message
 			</p>
 		</div>
 	</section>
