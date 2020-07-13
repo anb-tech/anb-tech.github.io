@@ -4876,25 +4876,9 @@ body {
   padding-top: 80px;
 }
 
-.projects-slider {
-  /* 	&__box{
-	display: flex;	
-	flex-direction: column;
-}
-&__box-elem{
-	display: flex;	
-}
-&__box-info{
-	text-align: center;
-}
-&__box-item{
-	padding: 10px;
-}  */
-}
-
 .projects-slider__box {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 60% 40%;
   grid-auto-rows: minmax(200px, auto);
   grid-gap: 20px;
 }
