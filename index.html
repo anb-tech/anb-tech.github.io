@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Document</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 	<script src="js/main.js" defer></script>
 	<script src="js/libs.min.js" defer></script>
@@ -355,7 +355,7 @@
 										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
 									</a>
 									<h4 class="projects-slider__box-info">
-										1
+										
 									</h4>
 								</div>
 								<div class="projects-slider__box-item">
@@ -363,7 +363,7 @@
 										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
 									</a>
 									<h4 class="projects-slider__box-info">
-										2
+										
 									</h4>
 								</div>
 							</div>
@@ -372,39 +372,58 @@
 							<div class="projects-slider__box">
 								<div class="projects-slider__box-item">
 									<a class="projects-slider__box-link" href="#">
-										<img class="projects-slider__box-image projects-slider__theater-image" src="images/theater-project.jpg" alt="theater-project">
+										<img class="projects-slider__box-image" src="" alt="">
 									</a>
 									<h4 class="projects-slider__box-info ">
-										1
+										
 									</h4>
 								</div>
 								<div class="projects-slider__box-item">
 									<a class="projects-slider__box-link" href="#">
-										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+										<img class="projects-slider__box-image" src="" alt="">
 									</a>
 									<h4 class="projects-slider__box-info">
-										2
+										
 									</h4>
 								</div>
 								<div class="projects-slider__box-item">
 									<a class="projects-slider__box-link" href="#">
-										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+										<img class="projects-slider__box-image" src="" alt="">
 									</a>
 									<h4 class="projects-slider__box-info">
-										3
+										
 									</h4>
 								</div>
 								<div class="projects-slider__box-item">
 									<a class="projects-slider__box-link" href="#">
-										<img class="projects-slider__box-image" src="images/youtube.svg" alt="">
+										<img class="projects-slider__box-image" src="" alt="">
 									</a>
 									<h4 class="projects-slider__box-info">
-										4
+										
 									</h4>
 								</div>
 							</div>
 						</div>
-
+					</div>
+				</div>
+				<div class="projects-arrows">
+					<div class="projects-arrow projects-arrow__back"> 
+						<img class="projects-arrow__img projects-arrow__back-img" src="images/projects-arrow-left.svg" alt="back">
+						<span class="projects-arrow__text-back ru">
+							ПРЕД
+						</span>
+						<span class="projects-arrow__text-back eng">
+							BACK
+						</span>
+					</div>
+					<div class="projects-arrow projects-arrow__next">
+						<span class="projects-arrow__text-next ru">
+							СЛЕД
+						</span>
+						<span class="projects-arrow__text-next eng">
+							NEXT
+						</span>
+						<img class="projects-arrow__img projects-arrow__next-img" src="images/projects-arrow-right.svg" alt="next">
 					</div>
 				</div>
 			</div>
@@ -413,32 +432,90 @@
 
 	<section class="contacts page-section" id="contacts">
 		<div class="page-section__overlay">
-			<div class="contacts__title">
-				<h3 class="contacts__title-header title ru">
-					Контакты
-				</h3>
-				<h3 class="contacts__title-header title eng">
-					Contacts
-				</h3>
+			<div class="container">
+				<div class="contacts__inner">
+					<div class="contacts__inner-item">
+						<div class="contacts__title">
+							<h3 class="contacts__title-header title ru">
+								Контакты
+							</h3>
+							<h3 class="contacts__title-header title eng">
+								Contacts
+							</h3>
+						</div>
+					</div>
+					<div class="contacts__inner-item">
+						<div class="contacts__text">
+							<p class="contacts__text-elem ru">
+								Хотите узнать больше или просто пообщаться?<br>
+								Добро пожаловать!
+							</p>
+							<p class="contacts__text-elem eng">
+								Want to know more or just chat? <br>
+								You are welcome!
+							</p>
+						</div>
+					</div>
+					<div class="contacts__inner-item">
+						<div class="contacts__message">
+							<p class="contacts__message-text ru">
+								Написать сообщение
+							</p>
+							<p class="contacts__message-text eng">
+								Send message
+							</p>
+						</div>
+					</div>
+					<div class="contacts__inner-item contacts__logo">
+						<div class="contacts__logo-inner">
+							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+								<img class="contacts__logo-image" src="images/telegram-icon.svg" alt="telegram-icon">
+							</a>
+						</div>
+						<div class="contacts__logo-inner">
+							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+								<img class="contacts__logo-image" src="images/vk-icon.svg" alt="vk-icon">
+							</a>
+						</div>
+						<div class="contacts__logo-inner">
+							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+								<img class="contacts__logo-image" src="images/github-icon.svg" alt="github-icon">
+							</a>
+						</div>
+						<div class="contacts__logo-inner">
+							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+								<img class="contacts__logo-image" src="images/gmail-icon.png" alt="gmail-icon">
+							</a>
+						</div>
+					</div>
+					<div class="contacts__inner-item">
+						<div class="contacts__links">
+							<p class="contacts__links-text ru">
+								Cвяжись со мной через<br>
+								Telegram, Vkontake, GitHub, Gmail
+							</p>
+							<p class="contacts__links-text eng">
+								Contact me on <br>
+								Telegram, Vkontake, GitHub, Gmail
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="contacts__title">
-				<h5 class="contacts__title-header ru">
-					Контакты
-				</h5>
-				<h5 class="contacts__title-header eng">
-					Want to know more or just chat? 
-					You are welcome!
-				</h5>
-			</div>
-			<p class="contacts__message ru">
-				Написать сообщение
-			</p>
-			<p class="contacts__message eng">
-				Send message
-			</p>
 		</div>
 	</section>
-
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<p class="footer__inner-data ru">
+					Последнее обновление: Июль 2020
+				</p>
+				<p class="footer__inner-data eng">
+					Last updated: July 2020
+				</p>
+			</div>
+		</div>
+	</footer>
 </body> 
 </html>
 
