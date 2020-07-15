@@ -4535,6 +4535,10 @@ body {
   display: none;
 }
 
+.active-language {
+  color: #070707;
+}
+
 .container {
   position: relative;
   max-width: 970px;
@@ -4699,20 +4703,31 @@ body {
 .top-inner-ru {
   display: inline-block;
   cursor: pointer;
+  color: #828282;
 }
 
 .top-inner-slash {
   display: inline-block;
+  color: #828282;
 }
 
 .top-inner-eng {
   display: inline-block;
   cursor: pointer;
+  color: #828282;
 }
 
 .top__slide-image {
   width: 100%;
   max-height: 420px;
+}
+
+.top-inner-ru.active-language {
+  color: #070707;
+}
+
+.top-inner-eng.active-language {
+  color: #070707;
 }
 
 /* about page */
@@ -5007,15 +5022,15 @@ body {
 
 .contacts__message {
   display: inline-block;
-  border-radius: 35px;
+  border-radius: 45px;
   background-color: #070707;
-  padding: 0 60px;
+  padding: 0 30px;
 }
 
 .contacts__message-text {
   color: #fff;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 18px;
 }
 
 .contacts__title {
