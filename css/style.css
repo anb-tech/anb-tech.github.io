@@ -5253,6 +5253,7 @@ body {
   }
   .menu__list-item {
     margin: 20px 0 0 26px;
+    display: inline-block;
   }
   .menu.active-burger {
     top: 0;
