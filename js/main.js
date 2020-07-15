@@ -1,33 +1,5 @@
 
 $(function(){
-
-/*	$('.skills__slider').slick({
-		centerMode: true,
-		centerPadding: '60px',
-		slidesToShow: 2,
-		adaptiveHeight: true,
-		responsive: [
-		{
-			breakpoint: 768,
-			settings: {
-				arrows: false,
-				centerMode: true,
-				centerPadding: '40px',
-				slidesToShow: 2
-			}
-		},
-		{
-			breakpoint: 480,
-			settings: {
-				arrows: false,
-				centerMode: true,
-				centerPadding: '40px',
-				slidesToShow: 1
-			}
-		}
-		]
-	});
-	*/
 	
 	$('.header__burger').click(function(event){
 		$('.header__burger, .menu').toggleClass('active-burger');
@@ -42,6 +14,26 @@ $(function(){
 		prevArrow: false,
 		nextArrow: false,
 		centerPadding: '60px',
+		responsive: [
+		{
+			breakpoint: 520,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '10px',
+				slidesToShow: 2
+			}
+		},
+		{
+			breakpoint: 415,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '10px',
+				slidesToShow: 1
+			}
+		}
+		]
 	});
 
 	$('.slider-arrow__back').on('click', function(){
@@ -69,6 +61,26 @@ $(function(){
 		prevArrow: false,
 		nextArrow: false,
 		centerPadding: '60px',
+		responsive: [
+		{
+			breakpoint: 520,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '5px',
+				slidesToShow: 3
+			}
+		},
+		{
+			breakpoint: 415,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '5px',
+				slidesToShow: 2
+			}
+		}
+		]
 	});
 
 	$('.instruments-arrow__back').on('click', function(){
