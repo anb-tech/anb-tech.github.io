@@ -13,36 +13,58 @@
 <body>
 	<header class="header page-section" id="home">
 		<div class="page-section__overlay">
-			<div class="container">
-				<div class="header__inner">
-					<div class="header__burger">
-
-					</div>
-					<nav class="menu">
-						<ul class="menu__list">
-							<li class="menu__list-item">
-								<a class="menu__list-link ru" href="#home">Главная</a>
-								<a class="menu__list-link eng" href="#home">Home</a>
-							</li>
-							<li class="menu__list-item">
-								<a class="menu__list-link ru" href="#about">Обо мне</a>
-								<a class="menu__list-link eng" href="#about">About me</a>
-							</li>
-							<li class="menu__list-item">
-								<a class="menu__list-link ru" href="#skills">Навыки</a>
-								<a class="menu__list-link eng" href="#skills">Skills</a>
-							</li>
-							<li class="menu__list-item">
-								<a class="menu__list-link ru" href="#projects">Проекты</a>
-								<a class="menu__list-link eng" href="#projects">Portfolio</a>
-							</li>
-							<li class="menu__list-item">
-								<a class="menu__list-link ru" href="#contacts">Контакты</a>
-								<a class="menu__list-link eng" href="#contacts">Contacts</a>
-							</li>
-						</ul>
-					</nav>
+			<div class="header__inner">
+				<div class="header-languages">
+					<div class="top-inner-ru active-language">
+						RU
+					</div>	
+					<div class="top-inner-slash">
+						|
+					</div>	
+					<div class="top-inner-eng">
+						ENG
+					</div>	
 				</div>
+				<div class="header__burger">
+					<span></span>
+				</div>
+				<nav class="menu">
+					<ul class="menu__list">
+						<li class="menu__list-item">
+							<a class="menu__list-link ru" href="#home">Главная</a>
+							<a class="menu__list-link eng" href="#home">Home</a>
+						</li>
+						<li class="menu__list-item">
+							<a class="menu__list-link ru" href="#about">Обо мне</a>
+							<a class="menu__list-link eng" href="#about">About me</a>
+						</li>
+						<li class="menu__list-item">
+							<a class="menu__list-link ru" href="#skills">Навыки</a>
+							<a class="menu__list-link eng" href="#skills">Skills</a>
+						</li>
+						<li class="menu__list-item">
+							<a class="menu__list-link ru" href="#projects">Проекты</a>
+							<a class="menu__list-link eng" href="#projects">Portfolio</a>
+						</li>
+						<li class="menu__list-item">
+							<a class="menu__list-link ru" href="#contacts">Контакты</a>
+							<a class="menu__list-link eng" href="#contacts">Contacts</a>
+						</li>
+						<div class="menu__list-languages">
+							<div class="top-inner-ru active-language">
+								RU
+							</div>	
+							<div class="top-inner-slash">
+								|
+							</div>	
+							<div class="top-inner-eng">
+								ENG
+							</div>	
+						</div>
+					</ul>
+				</nav>
+			</div>
+			<div class="container">
 				<div class="top__inner">
 					<div class="top__inner-elem">
 						<h1 class="top__inner-name ru">
@@ -63,13 +85,13 @@
 						<h5 class="top__inner-info eng">23 years old, Moscow</h5>
 					</div>
 					<div class="top__inner-elem top__inner-languges">
-						<div class="top__inner-ru active-language">
+						<div class="top-inner-ru active-language">
 							RU
 						</div>	
-						<div class="top__inner-slash">
+						<div class="top-inner-slash">
 							|
 						</div>	
-						<div class="top__inner-eng">
+						<div class="top-inner-eng">
 							ENG
 						</div>	
 					</div>
@@ -116,31 +138,29 @@
 						<p class="about__inner-info eng">
 							Ready to implement excellent projects
 							with wonderful people.
-						</p>
-						<div class="about__skills">
-							<div class="about__skills-elem">
-								<p class="about__inner-info ru">
-									Мои навыки расскажут обо мне больше.
-								</p>
-								<p class="about__inner-info eng">
-									My skills will tell you more.
-								</p>
-							</div>
-							<div class="about__skills-elem about__inner-scroll">
-								<div class="scroll-btn">
-									<a class="scroll-btn__link animate__animated animate__fadeInDown animate__infinite animate__slower" href="#skills">
-										<img src="images/down-arrow-active.png" alt="arrow-to-skills" class="scroll-btn__img">
-									</a>
-								</div>
-							</div>
-						</div>		
+						</p>	
 					</div>
-					<div class="about__inner-elem">
-						<div class="about__inner-photo">
-							<img class="about__inner-image" src="images/my-main.jpg" alt="my-photo">
-						</div>
+					<div class="about__inner-elem about__inner-photo">
+						<img class="about__inner-image" src="images/my-main.jpg" alt="my-photo">
 					</div>
 				</div>
+				<div class="about__skills">
+					<div class="about__skills-elem">
+						<p class="about__inner-info ru">
+							Мои навыки расскажут обо мне больше.
+						</p>
+						<p class="about__inner-info eng">
+							My skills will tell you more.
+						</p>
+					</div>
+					<div class="about__skills-elem about__inner-scroll">
+						<div class="scroll-btn">
+							<a class="scroll-btn__link animate__animated animate__fadeInDown animate__infinite animate__slower" href="#skills">
+								<img src="images/down-arrow-active.png" alt="arrow-to-skills" class="scroll-btn__img">
+							</a>
+						</div>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</section>
@@ -468,17 +488,17 @@
 					</div>
 					<div class="contacts__inner-item contacts__logo">
 						<div class="contacts__logo-inner">
-							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+							<a class="contacts__logo-link" href="https://telegram.me/one_mirage" target="_blank">
 								<img class="contacts__logo-image" src="images/telegram-icon.svg" alt="telegram-icon">
 							</a>
 						</div>
 						<div class="contacts__logo-inner">
-							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+							<a class="contacts__logo-link" href="https://vk.com/morgantong">
 								<img class="contacts__logo-image" src="images/vk-icon.svg" alt="vk-icon">
 							</a>
 						</div>
 						<div class="contacts__logo-inner">
-							<a class="contacts__logo-link" href="tg://resolve?domain=username" >
+							<a class="contacts__logo-link" href="https://github.com/anb-tech">
 								<img class="contacts__logo-image" src="images/github-icon.svg" alt="github-icon">
 							</a>
 						</div>

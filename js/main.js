@@ -28,6 +28,11 @@ $(function(){
 		]
 	});
 	*/
+	
+	$('.header__burger').click(function(event){
+		$('.header__burger, .menu').toggleClass('active-burger');
+		$('body').toggleClass('lock');
+	});
 
 	/*	skills slider*/
 
@@ -92,7 +97,7 @@ $(function(){
 		nextArrow: false,
 	});
 
-		$('.projects-arrow__back').on('click', function(){
+	$('.projects-arrow__back').on('click', function(){
 		$('.projects-slider').slick('slickPrev'),
 		$('.projects-arrow__text-back').addClass('animate__animated animate__pulse animate__slower');
 		setTimeout(function(){
@@ -111,17 +116,17 @@ $(function(){
 
 	/*languages*/
 
-	$('.top__inner-ru').on('click', function(){
+	$('.top-inner-ru').on('click', function(){
 		$('.eng').css('display','none'),
 		$('.ru').css('display','block'),
-		$('.top__inner-ru').addClass('active-language'),
-		$('.top__inner-eng').removeClass('active-language');
+		$('.top-inner-ru').addClass('active-language'),
+		$('.top-inner-eng').removeClass('active-language');
 	});
-	$('.top__inner-eng').on('click', function(){
+	$('.top-inner-eng').on('click', function(){
 		$('.ru').css('display','none'),
 		$('.eng').css('display','block'),
-		$('.top__inner-eng').addClass('active-language'),
-		$('.top__inner-ru').removeClass('active-language');
+		$('.top-inner-eng').addClass('active-language'),
+		$('.top-inner-ru').removeClass('active-language');
 	});
 
 });
