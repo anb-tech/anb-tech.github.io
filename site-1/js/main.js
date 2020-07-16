@@ -43,6 +43,7 @@ $(function(){
 			slidesToShow: 2,
 			slidesToScroll: 1
 		});
+
 	} else if(window.matchMedia("screen and (min-width: 1px) and (max-width: 576px)").matches){
 		$('.products-slider').slick({
 			prevArrow: false,
@@ -50,6 +51,15 @@ $(function(){
 			slidesToShow: 1,
 			slidesToScroll: 1
 		});
+
+			$('.products-box__inner').hover(
+		function () {
+			$(this).addClass('products-box__inner--hover');
+		},
+		function () {
+			$(this).removeClass('products-box__inner--hover');
+		});
+
 	} else {
 		$('.products-slider').slick({
 			prevArrow: false,
@@ -57,7 +67,19 @@ $(function(){
 			slidesToShow: 4,
 			slidesToScroll: 1
 		});
+
+		$('.products-box__inner').hover(
+			function () {
+				$(this).addClass('products-box__inner--hover');
+			},
+			function () {
+				$(this).removeClass('products-box__inner--hover');
+			});
+
+
 	}
+
+
 
 	$('.slider-arrow__left').on('click', function(){
 		$('.products-slider').slick('slickPrev');
@@ -65,5 +87,6 @@ $(function(){
 	$('.slider-arrow__right').on('click', function(){
 		$('.products-slider').slick('slickNext');
 	});
+
 
 });
