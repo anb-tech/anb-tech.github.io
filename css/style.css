@@ -5230,6 +5230,7 @@ body {
   }
   .header-languages {
     display: block;
+    top: 28px;
   }
   .header__burger {
     position: absolute;
@@ -5248,18 +5249,23 @@ body {
     z-index: 2;
   }
   .menu__list {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 10px 0 30px 0;
   }
   .menu__list-item {
     margin: 20px 0 0 26px;
     display: inline-block;
+    min-width: 80px;
   }
   .menu.active-burger {
     top: 0;
   }
   .menu__list-languages {
     display: block;
+  }
+  .top__inner {
+    padding-top: 50px;
   }
   .top__inner-name {
     font-size: 35px;
@@ -5282,7 +5288,7 @@ body {
     height: auto;
   }
   .about__inner-image {
-    max-width: 500px;
+    max-width: 450px;
   }
   .about__skills {
     padding-top: 15px;
@@ -5329,10 +5335,10 @@ body {
     min-height: 600px;
   }
   .about__inner-image {
-    max-width: 400px;
+    max-width: 380px;
   }
   .about__inner-elem {
-    max-width: 400px;
+    max-width: 380px;
   }
   .skills__subtitle-header {
     padding: 40px 0 60px 0;
@@ -5377,8 +5383,12 @@ body {
   .container {
     max-width: 400px;
   }
+  .top__inner-name {
+    font-size: 30px;
+    line-height: 40px;
+  }
   .about__inner-image {
-    max-width: 320px;
+    max-width: 300px;
   }
   .about__skills {
     padding-top: 15px;
