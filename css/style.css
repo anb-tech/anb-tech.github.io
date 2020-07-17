@@ -4658,6 +4658,7 @@ body {
 }
 
 .menu__list-link {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: #828282;
 }
 
@@ -4870,6 +4871,7 @@ body {
 }
 
 .slider-arrow__back {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   width: 45px;
   height: 45px;
   position: absolute;
@@ -4889,6 +4891,7 @@ body {
 }
 
 .slider-arrow__next {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   width: 45px;
   height: 45px;
   position: absolute;
@@ -5046,6 +5049,10 @@ body {
   margin: 80px auto 45px;
   justify-content: space-between;
   max-width: 300px;
+}
+
+.contacts__logo-inner {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .contacts__logo-image {
