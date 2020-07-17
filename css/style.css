@@ -4704,6 +4704,7 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #828282;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .top-inner-slash {
@@ -4715,6 +4716,7 @@ body {
   display: inline-block;
   cursor: pointer;
   color: #828282;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .top__slide-image {
@@ -4911,6 +4913,7 @@ body {
   justify-content: space-between;
   min-width: 250px;
   align-self: center;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .instruments-arrow {
@@ -4978,6 +4981,7 @@ body {
   display: flex;
   justify-content: space-between;
   max-width: 250px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .projects-arrow {

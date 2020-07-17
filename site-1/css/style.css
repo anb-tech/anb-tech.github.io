@@ -985,6 +985,7 @@ input, textarea {
 .supports__inner {
   display: flex;
   padding-top: 100px;
+  justify-content: center;
 }
 
 .supports__inner-elem {
@@ -1070,20 +1071,24 @@ input, textarea {
   .header__top {
     display: flex;
     justify-content: center;
-    padding-top: 51px;
+    padding-top: 30px;
     position: relative;
     z-index: 2;
     max-width: 1000px;
     flex-wrap: wrap;
   }
   .header__aside-menu {
-    padding-top: 274px;
+    padding-top: 200px;
   }
   .menu {
     padding-left: 150px;
   }
+  .header__inner {
+    min-width: 700px;
+    padding-top: 3%;
+  }
   .header__phone {
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .header__info {
     padding-top: 50px;
@@ -1097,6 +1102,22 @@ input, textarea {
   }
   .partners__list {
     min-width: 900px;
+  }
+  .slider-arrow {
+    padding-top: 20px;
+  }
+  .supports {
+    max-width: 900px;
+    margin: 150px auto 0 auto;
+    padding: 100px auto 80px auto;
+    align-items: center;
+  }
+  .supports__inner {
+    display: flex;
+    padding-top: 100px;
+  }
+  .supports__inner-elem {
+    padding-bottom: 25px;
   }
 }
 
@@ -1157,7 +1178,6 @@ input, textarea {
     min-width: 630px;
   }
   .supports {
-    max-width: 690px;
     padding: 0 0 80px 0;
   }
   .supports__inner {
@@ -1168,7 +1188,7 @@ input, textarea {
   .supports__contact-info {
     display: flex;
     justify-content: space-between;
-    min-width: 690px;
+    min-width: 580px;
     margin: 80px 0 0 0;
     padding: 0;
     min-height: 59px;
@@ -1182,7 +1202,7 @@ input, textarea {
   }
   .support-form__item-top {
     display: flex;
-    min-width: 690px;
+    min-width: 580px;
     justify-content: space-between;
     padding-bottom: 40px;
   }
@@ -1200,6 +1220,10 @@ input, textarea {
     position: relative;
     margin: 0;
     padding: 0;
+  }
+  .header__info {
+    padding: 0;
+    text-align: center;
   }
   .header__inner {
     min-width: 400px;
@@ -1395,7 +1419,7 @@ input, textarea {
     min-width: 509px;
   }
   .partners__list {
-    min-width: 510px;
+    min-width: 400px;
   }
   .partners__main {
     padding: 0;
@@ -1417,10 +1441,10 @@ input, textarea {
     min-height: 230px;
   }
   .support-form__message {
-    min-width: 509px;
+    min-width: 100%;
   }
   .support-form__item-box {
-    min-width: 509px;
+    min-width: 100%;
   }
   .support-form__item-bottom {
     display: flex;
@@ -1442,11 +1466,43 @@ input, textarea {
   .supports__contact-info {
     display: flex;
     margin-top: 50px;
-    min-width: 509px;
     justify-content: space-between;
+    min-width: 400px;
   }
   .footer {
     max-width: 504px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) and (max-width: 385px) {
+  .header__info {
+    margin: 0 auto;
+  }
+  .header__info-title {
+    font-size: 45px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .header__inner {
+    display: flex;
+    padding: 0 auto;
+    align-items: center;
+  }
+  .header__inner-item {
+    padding-top: 50px 0 0 0;
+    min-width: 300px;
+    padding: 0;
+  }
+  .partners__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .partners-none {
+    display: none;
+  }
+  .supports__contact-info {
+    min-width: 300px;
   }
 }
