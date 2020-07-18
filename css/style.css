@@ -4577,15 +4577,23 @@ body {
   padding-top: 0;
 }
 
+.header__body {
+  padding: 0 15px;
+}
+
 .header__inner {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
   max-width: 970px;
   margin: 0 auto;
   padding: 0 15px;
-  min-height: 30px;
+  height: 80px;
   text-transform: uppercase;
   font-size: 15px;
   line-height: 17px;
   z-index: 2;
+  border-bottom: 1px solid #828282;
 }
 
 .header-languages {
@@ -4593,6 +4601,17 @@ body {
   top: 5%;
   left: 10%;
   display: none;
+}
+
+.header__logo {
+  flex: 0 0 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header__logo-image {
+  max-width: 100%;
+  display: block;
 }
 
 /* menu burger */
@@ -4646,8 +4665,7 @@ body {
 }
 
 .menu {
-  border-bottom: 1px solid #828282;
-  width: 100%;
+  min-width: 80%;
   transition: all 0.3s;
 }
 
@@ -5242,6 +5260,7 @@ body {
   .header-languages {
     display: block;
     top: 28px;
+    left: 100px;
   }
   .header__burger {
     position: absolute;
