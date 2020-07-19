@@ -4993,6 +4993,7 @@ body {
 }
 
 .projects-slider__box-info {
+  max-width: 450px;
   padding: 10px 0 15px;
 }
 
