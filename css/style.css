@@ -4544,6 +4544,7 @@ body {
   max-width: 970px;
   margin: 0 auto;
   padding: 0 15px;
+  overflow: hidden;
 }
 
 .page-section {
@@ -4575,10 +4576,6 @@ body {
 /* header page */
 .header {
   padding-top: 0;
-}
-
-.header__body {
-  padding: 0 15px;
 }
 
 .header__inner {
@@ -4759,12 +4756,23 @@ body {
 
 .about__inner {
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
+  min-height: 660px;
+  padding-top: 50px;
+}
+
+.about__inner-photo {
+  flex: 0 0 250px;
+  width: 250px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .about__inner-image {
-  max-width: 450px;
+  max-width: 100%;
+  display: block;
 }
 
 .about__inner-scroll {
@@ -4775,18 +4783,12 @@ body {
   max-width: 450px;
 }
 
-.about__inner-text {
-  padding-top: 30px;
-}
-
 .about__skills {
-  position: absolute;
   display: flex;
   justify-content: space-between;
-  max-width: 300px;
+  max-width: 345px;
   margin: 0 auto;
-  left: 12%;
-  bottom: 18%;
+  padding-left: 45px;
 }
 
 .about__skills-elem {
@@ -5105,27 +5107,6 @@ body {
   .container {
     max-width: 850px;
   }
-  .about__inner {
-    padding-top: 40px;
-  }
-  .about__inner-image {
-    max-width: 380px;
-  }
-  .about__inner-photo {
-    display: inline-block;
-    height: 250px;
-  }
-  .about__skills {
-    position: relative;
-    left: -24%;
-    bottom: 0;
-  }
-  .about__inner-elem {
-    max-width: 400px;
-  }
-  .about__inner-info {
-    margin: 0 0 1em 0;
-  }
   .rating {
     min-width: 130px;
   }
@@ -5151,24 +5132,6 @@ body {
 @media (max-width: 813px) {
   .container {
     max-width: 800px;
-  }
-  .about__inner-image {
-    max-width: 330px;
-  }
-  .about__skills {
-    padding-top: 50px;
-    left: 0;
-  }
-  .about__inner-elem {
-    max-width: 350px;
-    position: relative;
-  }
-  .about__inner-text {
-    padding-right: 20px;
-    padding-top: 0;
-  }
-  .about__skills-elem {
-    max-width: 250px;
   }
   .skills__subtitle-header {
     text-align: center;
@@ -5256,12 +5219,12 @@ body {
   .header__inner {
     max-width: 970px;
     margin: 0 auto;
-    padding: 0;
+    padding-left: 10px;
   }
   .header-languages {
     display: block;
-    top: 28px;
-    left: 100px;
+    top: 32px;
+    left: 120px;
   }
   .header__burger {
     position: absolute;
@@ -5310,27 +5273,35 @@ body {
     align-self: center;
   }
   .about__inner {
+    display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
-    min-height: 800px;
+    min-height: 610px;
+    padding-top: 30px;
   }
   .about__inner-photo {
-    height: auto;
+    flex: 0 0 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
   }
   .about__inner-image {
+    max-width: 100%;
+    display: block;
+  }
+  .about__inner-scroll {
+    align-self: center;
+  }
+  .about__inner-elem {
     max-width: 450px;
   }
   .about__skills {
-    padding-top: 15px;
-    padding-left: 25px;
-  }
-  .about__inner-elem {
-    max-width: 500px;
-  }
-  .about__inner-text {
-    margin-top: 20px;
-    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 345px;
+    margin: 0 auto;
+    padding-left: 45px;
   }
   .about__skills-elem {
     max-width: 250px;
@@ -5358,18 +5329,6 @@ body {
 @media (max-width: 520px) {
   .container {
     max-width: 500px;
-  }
-  .about__inner {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 600px;
-  }
-  .about__inner-image {
-    max-width: 380px;
-  }
-  .about__inner-elem {
-    max-width: 380px;
   }
   .skills__subtitle-header {
     padding: 40px 0 60px 0;
@@ -5417,23 +5376,6 @@ body {
   .top__inner-name {
     font-size: 30px;
     line-height: 40px;
-  }
-  .about__inner-image {
-    max-width: 300px;
-  }
-  .about__skills {
-    padding-top: 15px;
-    padding-left: 25px;
-  }
-  .about__inner-elem {
-    max-width: 320px;
-  }
-  .about__inner-text {
-    margin-top: 20px;
-    padding: 0;
-  }
-  .about__skills-elem {
-    max-width: 250px;
   }
   .skills__slider {
     padding-bottom: 0;
