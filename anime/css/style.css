@@ -1,0 +1,273 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.0em;
+  font-weight: normal;
+  margin: 0;
+}
+
+input, textarea {
+  outline: none;
+}
+
+body {
+  background-image: url(../images/bg-main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  position: relative;
+  font-size: 24px;
+  line-height: 27px;
+  color: #cfe0e3;
+  font-family: 'Marck Script', cursive;
+}
+
+.container {
+  position: relative;
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 25px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-section {
+  min-height: 100vh;
+  padding: 30px 0 30px;
+  position: relative;
+}
+
+.page-section__title {
+  font-size: 35px;
+  line-height: 39px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.page__wrapper {
+  z-index: 1;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+}
+
+/* chapters button */
+.button__topic {
+  background-color: #cfe0e3;
+  transition: all 0.3s ease;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border-style: none;
+}
+
+button.button__topic:hover {
+  background-color: #3da7b8;
+}
+
+button.button__topic:focus {
+  outline: none;
+}
+
+a.button__topic-link {
+  transition: all 1s ease;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+  border-radius: 100%;
+  outline: none;
+}
+
+a.button__topic-link:after, a.button__topic-link:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -4px;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10%;
+  margin: auto;
+  background: #999;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+a.button__topic-link:before {
+  left: 4px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+a.button__topic-link:hover:after, a.button__topic-link:hover:before {
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+a.button__topic-active:after, a.button__topic-active:before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+a.button__topic-active:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* header */
+.header__song {
+  position: absolute;
+  right: 25px;
+}
+
+.menu {
+  transition: all 0.3s;
+  padding: 0 30px 30px 30px;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__list-link {
+  color: #3da7b8;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.menu__list-link:hover {
+  color: #eee;
+}
+
+.menu__list-link:active {
+  color: #376f99;
+}
+
+/* button show all chapters */
+.button-chpaters {
+  display: block;
+  position: relative;
+  background: black;
+  z-index: 3;
+  height: 400px;
+  width: 80%;
+  margin: 30px auto 20px;
+  border-radius: 5px;
+}
+
+.button-chapters__text {
+  position: absolute;
+  color: #cfe0e3;
+  font-family: 'Marck Script', cursive;
+  font-size: 35px;
+  line-height: 39px;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 30% 0 0 0;
+  transition: all 0.5s;
+}
+
+.button-chapters__image {
+  top: 0;
+  right: -50%;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.button-chpaters:hover .button-chapters__image {
+  opacity: 0.9;
+}
+
+.button-chpaters:hover .button-chapters__text {
+  color: black;
+  font-weight: 700;
+}
+
+/* about autor */
+.autor__subtitle {
+  line-height: 33px;
+}
+
+.history__images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 990px;
+  margin-top: 35px;
+}
+
+.history__images-box {
+  display: flex;
+  justify-content: space-between;
+  min-width: 650px;
+  padding: 0;
+}
+
+.history__images-elem {
+  background-color: black;
+  height: 300px;
+  z-index: 3;
+}
+
+.history__text-section {
+  transition: all 0.3s ease;
+}
+
+.history__images-img {
+  width: 300px;
+  height: 300px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.history__images-img:hover {
+  opacity: 1;
+}
+
+/* footer */
+.footer {
+  padding: 200px 0 25px;
+}
