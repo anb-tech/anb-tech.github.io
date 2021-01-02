@@ -54,6 +54,7 @@ function createPoint(data) {
 
 window.addEventListener('DOMContentLoaded', () => {
 	requestGET();
+	console.log(data);
 });
 
 let onPathClick = (e) => {
