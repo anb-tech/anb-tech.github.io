@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Indoor</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
+	<link rel="icon" type="image / png" sizes="32x32" href="images/favicon-32x32.png">
+</head>
+
+<body>
+	<header class="header">
+		<h1 class="header__title">
+			INDOOR-POSITION
+		</h1>
+		<p class="header__description">
+			Motion of nodes
+		</p>
+	</header>
+
+	<section class="motion section">
+		<div class="motion__path">
+			<template id="similar-point-template">
+				<div class="point motion__elem">
+					<div class="point__inner">
+						<div class="point__radius2">
+							<div class="point__radius1">
+								<div class="point__center"></div>
+							</div>
+						</div>
+					</div>
+					<p class="point__name"></p>
+				</div>
+			</template>
+			<div class="menu">
+				<div class="menu__settings">
+					<div class="form-wrapper hidden motion__elem">
+						<form class="form">
+							<div class="form__item"> 
+								<button class="form__close" id="close-form-button"></button> 
+								<label class="form__label" for="name">Название узла</label>
+								<input class="form__input" name="name" value="Название">
+							</div> 
+							<div class="form__item"> 
+								<label class="form__label" for="radius1">Покрытие для первого радиуса</label>
+								<input class="form__input" name="radius1" value="100">
+							</div> 
+							<div class="form__item"> 
+								<label class="form__label" for="radius2">Покрытие второго радиуса</label>
+								<input class="form__input" name="radius2" value="60">
+							</div> 
+							<div class="form__item form__button"> 
+								<button class="button" id="save-form-button">Сохранить</button>
+							</div> 
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+
+	</footer>
+
+	<script src="js/main.js"></script>
+</body>
+</html>
+
+
