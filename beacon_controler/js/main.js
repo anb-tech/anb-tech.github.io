@@ -10,7 +10,7 @@ var numberPoints;
 ////////////////////////// work with data //////////////////////////
 function requestGET () {
 	const request = new XMLHttpRequest();
-	request.open('GET', 'https://anb-tech.github.io/all_data/beacons_controler.json');
+	request.open('GET', 'https://anb-tech.github.io/all_data/beacons_controler/poits');
 	request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 	request.send();
 	request.addEventListener('load', function() {
