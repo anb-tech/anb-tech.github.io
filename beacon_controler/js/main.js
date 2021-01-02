@@ -1,4 +1,4 @@
-'use strict';
+x'use strict';
 
 let motionPath = document.querySelector('.motion__path');
 let similarPointTemplate = document.querySelector('#similar-point-template').content.querySelector('.point');
@@ -12,7 +12,7 @@ var numberPoints;
 ////////////////////////// work with data //////////////////////////
 function requestGET () {
 	const request = new XMLHttpRequest();
-	request.open('GET', 'https://anb-tech.github.io/all_data/points');
+	request.open('GET', 'https://anb-tech.github.io/all_data/beacons_controler.json');
 	request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 	request.send();
 	request.addEventListener('load', function() {
@@ -148,7 +148,7 @@ let onPathClick = (e) => {
 			let json = JSON.stringify(obj);
 
 			const request = new XMLHttpRequest();
-			request.open('POST', 'https://anb-tech.github.io/all_data/points');
+			request.open('POST', 'https://anb-tech.github.io/all_data/beacons_controler.json');
 			request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 			request.send(json);
 		};
