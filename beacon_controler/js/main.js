@@ -1,5 +1,3 @@
-x'use strict';
-
 let motionPath = document.querySelector('.motion__path');
 let similarPointTemplate = document.querySelector('#similar-point-template').content.querySelector('.point');
 let motionElemList = document.querySelectorAll('.motion__elem');
