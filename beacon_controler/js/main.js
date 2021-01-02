@@ -10,12 +10,12 @@ var numberPoints;
 ////////////////////////// work with data //////////////////////////
 function requestGET () {
 	const request = new XMLHttpRequest();
-	request.open('GET', 'https://anb-tech.github.io/all_data/beacons_controler/points');
+	request.open('GET', 'https://anb-tech.github.io/all_data/beacons_controler.json');
 	request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 	request.send();
 	request.addEventListener('load', function() {
 		if (request.status == 200) {
-			data = JSON.parse(request.response);
+			data = JSON.parse(request.response).points;
 			console.log(data);
 			createPoint(data);
 			numberPoints = data.length;
