@@ -1,71 +1,104 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Indoor</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
-	<link rel="icon" type="image / png" sizes="32x32" href="images/favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Beacon Controller</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
+    <link rel="icon" type="image / png" sizes="32x32" href="images/favicon-32x32.png">
 </head>
 
-<body>
-	<header class="header">
-		<h1 class="header__title">
-			INDOOR-POSITION
-		</h1>
-		<p class="header__description">
-			Motion of nodes
-		</p>
-	</header>
+<body class="body">
+<header class="header">
+    <h1 class="header__title">
+        POINTS-CONTROLLER
+    </h1>
+</header>
 
-	<section class="motion section">
-		<div class="motion__path">
-			<template id="similar-point-template">
-				<div class="point motion__elem">
-					<div class="point__inner">
-						<div class="point__radius2">
-							<div class="point__radius1">
-								<div class="point__center"></div>
-							</div>
-						</div>
-					</div>
-					<p class="point__name"></p>
-				</div>
-			</template>
-			<div class="menu">
-				<div class="menu__settings">
-					<div class="form-wrapper hidden motion__elem">
-						<form class="form">
-							<div class="form__item"> 
-								<button class="form__close" id="close-form-button"></button> 
-								<label class="form__label" for="name">Название узла</label>
-								<input class="form__input" name="name" value="Название">
-							</div> 
-							<div class="form__item"> 
-								<label class="form__label" for="radius1">Покрытие для первого радиуса</label>
-								<input class="form__input" name="radius1" value="100">
-							</div> 
-							<div class="form__item"> 
-								<label class="form__label" for="radius2">Покрытие второго радиуса</label>
-								<input class="form__input" name="radius2" value="60">
-							</div> 
-							<div class="form__item form__button"> 
-								<button class="button" id="save-form-button">Сохранить</button>
-							</div> 
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<section class="motion section">
+    <p class="header__description">
+        Default parameters:
+    </p>
+    <div class="default-values">
+        <div class="default-values__item">
+            <label class="default-values__label" for="radius1">First coverage area</label>
+            <input class="default-values__input" id="radius1" name="radius1" value="50">
+        </div>
+        <div class="default-values__item">
+            <label class="default-values__label" for="radius2">Second coverage area</label>
+            <input class="default-values__input" id="radius2" name="radius2" value="200">
+        </div>
+        <div class="default-values__item">
+            <label class="default-values__label" for="signal1">First zone signal level</label>
+            <input class="default-values__input" id="signal1" name="signal1" value="80">
+        </div>
+        <div class="default-values__item">
+            <label class="default-values__label" for="signal2">Second zone signal level</label>
+            <input class="default-values__input" id="signal2" name="signal2" value="40">
+        </div>
+    </div>
+    <p class="path-title">
+        Points path
+    </p>
+    <div class="motion__path">
+        <template id="similar-point-template">
+            <div class="point motion__elem">
+                <div class="point__inner">
+                    <div class="point__radius2">
+                        <div class="point__radius1">
+                            <div class="point__center">
+                                <p class="point__name"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
 
-	<footer class="footer">
+        <div class="hidden context-menu ">
+            <div class="context-menu__back context-menu__item">Cancel</div>
+            <div class="context-menu__open-setting context-menu__item">Settings</div>
+            <div class="context-menu__delete-point context-menu__item">Delete</div>
+        </div>
 
-	</footer>
+        <div class="settings-menu hidden" id="open-me">
+            <div class="form">
+                <div class="form__item">
+                    <button class="form__close" id="close-form-button"></button>
+                    <label class="form__label">Point name</label>
+                    <input class="form__input form-settings__name" value="1">
+                </div>
+                <div class="form__item">
+                    <label class="form__label">First coverage area</label>
+                    <input class="form__input form-settings__radius1" value="50">
+                </div>
+                <div class="form__item">
+                    <label class="form__label">Second coverage area</label>
+                    <input class="form__input form-settings__radius2" value="100">
+                </div>
+                <div class="form__item">
+                    <label class="form__label">First zone signal level</label>
+                    <input class="form__input form-settings__signal1" value="80">
+                </div>
+                <div class="form__item">
+                    <label class="form__label">Second zone signal level</label>
+                    <input class="form__input form-settings__signal2" value="40">
+                </div>
+                <div class="form__item form__button">
+                    <button class="button" id="save-form-button">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<script src="js/main.js"></script>
+<footer class="footer">
+
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
 

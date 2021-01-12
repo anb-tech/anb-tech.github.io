@@ -1,5 +1,5 @@
-body, .button, .form__input {
-  font-family: 'Girloy-Regular', sans-serif;
+.form__input, .button, body {
+  font-family: "Girloy-Regular", sans-serif;
   font-weight: 400;
 }
 
@@ -32,7 +32,7 @@ li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: normal;
   margin: 0;
 }
@@ -53,35 +53,48 @@ body {
 .button {
   font-size: 25px;
   line-height: 30px;
-  border-radius: 7px;
   padding: 5px;
-  background-color: rgba(0, 124, 33, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.button:hover {
+  background-color: lightblue;
 }
 
 .motion__path {
-  opacity: 1;
   border: 3px solid black;
-  height: 90vh;
+  height: 68vh;
 }
-
 .motion__elem {
   position: absolute;
+}
+
+.path-title {
+  text-align: center;
 }
 
 .point {
   display: inline-block;
   position: absolute;
+  cursor: pointer;
 }
-
+.point__name {
+  margin-top: 30px;
+  margin-left: 30px;
+  border-radius: 30%;
+  border: 1px solid #007C21;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .point__center {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   background-color: red;
   border-radius: 50%;
   border: 1px solid black;
 }
-
 .point__radius1 {
   display: flex;
   align-items: center;
@@ -90,9 +103,8 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgba(0, 124, 33, 0.5);
+  background-color: rgba(0, 124, 33, 0.3);
 }
-
 .point__radius2 {
   display: flex;
   align-items: center;
@@ -100,7 +112,12 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgba(0, 124, 33, 0.3);
+  background-image: radial-gradient(circle closest-side at 50px 50px, rgba(0, 124, 33, 0.8) 0%, rgba(0, 124, 33, 0.2));
+}
+
+.settings-menu {
+  z-index: 2;
+  position: absolute;
 }
 
 .form {
@@ -109,28 +126,20 @@ body {
   flex-direction: column;
   background-color: #ddd;
   padding: 15px;
-  border-radius: 7px;
+  border-radius: 3px;
   border: 1px solid black;
 }
-
-.form-wrapper {
-  z-index: 2;
-}
-
 .form__item {
   display: flex;
   flex-direction: column;
 }
-
 .form__input {
   font-size: 25px;
   line-height: 30px;
-  border-radius: 7px;
   padding: 1px 3px;
   margin: 5px 0;
   background-color: white;
 }
-
 .form__button {
   align-self: center;
   min-width: 300px;
@@ -145,15 +154,12 @@ body {
   top: 15px;
   opacity: 0.3;
 }
-
 .form__close:hover {
   opacity: 1;
 }
-
 .form__close:before {
   transform: rotate(45deg);
 }
-
 .form__close:after {
   transform: rotate(-45deg);
 }
@@ -162,9 +168,33 @@ body {
   position: absolute;
   top: -2px;
   left: 12px;
-  content: ' ';
+  content: " ";
   height: 30px;
   width: 2px;
   background-color: #333;
 }
 
+.default-values {
+  margin-bottom: 15px;
+}
+.default-values__input {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.context-menu {
+  z-index: 1;
+  background-color: white;
+  position: absolute;
+  width: 200px;
+}
+.context-menu__item {
+  cursor: pointer;
+  height: 30px;
+  border: 1px solid black;
+}
+.context-menu__item:hover {
+  background-color: lightblue;
+}
+
+/*# sourceMappingURL=style.css.map */

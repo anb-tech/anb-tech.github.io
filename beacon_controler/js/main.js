@@ -1,104 +1,146 @@
-let initialData = {
-    "points": [
-        {
-            "name": 1,
-            "radius1": 60,
-            "radius2": 100,
-            "signal_quality1": 50,
-            "signal_quality2": 20,
-            "top_position": 200,
-            "left_position": 200,
-            "id": 1
-        },
-        {
-            "name": 2,
-            "radius1": 50,
-            "radius2": 80,
-            "signal_quality1": 80,
-            "signal_quality2": 50,
-            "top_position": 300,
-            "left_position": 350,
-            "id": 2
-        }
-    ]
-}
-
 let motionPath = document.querySelector('.motion__path');
 let similarPointTemplate = document.querySelector('#similar-point-template').content.querySelector('.point');
 let motionElemList = document.querySelectorAll('.motion__elem');
-let formWrapper = document.querySelector('.form-wrapper');
+let settingsMenu = document.querySelector('.settings-menu');
+let contextMenu = document.querySelector('.context-menu');
 let saveFormButton = motionPath.querySelector('#save-form-button');
-let closeFormButton = motionPath.querySelector('#close-form-button');
-var data = [];
-var numberPoints;
+let closeFormButton = motionPath.querySelector('#close-form-button')
+let defaultValuesForm = document.querySelector('.default-values');
+let numberPoints;
+let saveTarget;
+let data;
 
 ////////////////////////// work with data //////////////////////////
 
-
-function requestGET() {
-    data = JSON.parse(localStorage.getItem('data')).points;
-    numberPoints = data.length;
-    createPoint(data);
-
-
-    /* const request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost:3000/points');
-    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    request.send();
-    request.addEventListener('load', function () {
-        if (request.status == 200) {
-            data = JSON.parse(request.response);
-            createPoint(data);
-            console.log(data);
-            numberPoints = data.length;
-
-        } else {
-            console.error('Ошибка');
-        }
-    }); */
-};
-
 function createPoint(data) {
     data.forEach(item => {
+        
         let point = document.createElement('div');
         point.classList.add('point', 'motion__elem');
         point.style.top = (item.top_position) + 'px';
         point.style.left = (item.left_position) + 'px';
 
         point.innerHTML = `
-		<div class="point__inner">
-		<div class="point__radius2" style="width: ${item.radius2}px; height: ${item.radius2}px">
-		<div class="point__radius1" style="width: ${item.radius1}px; height: ${item.radius1}px">
-		<div class="point__center"></div>
-		</div>
-		</div>
-		</div>
-		<p class="point__name">
-		${item.name}
-		</p>
-		`;
+		<div class='point__inner'>
+		    <div class='point__radius2' style='width: ${item.radius2}px; height: ${item.radius2}px; background-image: radial-gradient(circle closest-side at ${(item.radius2)/2}px ${(item.radius2)/2}px, rgba(0, 124, 33, 0.8) 0%, rgba(0, 124, 33, 0.2)) '>
+		        <div class='point__radius1' style='width: ${item.radius1}px; height: ${item.radius1}px;'>
+		            <div class='point__center'>
+		                <p class='point__name'>
+		                    ${item.id}
+		                </p>
+                    </div>
+		        </div>
+		    </div>
+		</div>`;
         motionPath.appendChild(point);
     });
 };
 
+function requestGET() {
+    let request = localStorage.getItem('data');
+    data = request ? JSON.parse(request) : [];
+    if (data[data.length - 1] == undefined) {
+        numberPoints = 0
+    } else {
+        numberPoints = data[data.length - 1].id
+    }
+
+
+    /*
+    const request = new XMLHttpRequest();
+        request.open('GET', 'http://localhost:3000/points');
+        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        request.send();
+        request.addEventListener('load', function () {
+            if (request.status == 200) {
+                data = JSON.parse(request.response);
+                createPoint(data);
+                console.log(data);
+                numberPoints = data.length;
+
+            } else {
+                console.error('Ошибка');
+            }
+        });
+        */
+}
+
+function requestDELETE(target) {
+
+    let deleteElemId = Number(target.querySelector('.point__name').textContent);
+    let dataForSlice = (JSON.parse(localStorage.getItem('data')));
+    let slicedPoints = dataForSlice.filter((item) => item.id !== deleteElemId);
+    localStorage.setItem('data', JSON.stringify(slicedPoints));
+
+}
+
+
+function requestPOST(e, name = numberPoints, radius1 = defaultValuesForm.querySelector('#radius1').value,
+                     radius2 = defaultValuesForm.querySelector('#radius2').value,
+                     signal1 = defaultValuesForm.querySelector('#signal1').value,
+                     signal2 = defaultValuesForm.querySelector('#signal2').value) {
+
+
+    let obj = {
+        id: numberPoints,
+        name: name,
+        radius1: radius1,
+        radius2: radius2,
+        signal_quality1: signal1,
+        signal_quality2: signal2,
+        top_position: e.clientY - (radius2/2),
+        left_position: e.clientX - (radius2/2),
+    };
+
+    data.push(obj);
+    let request = JSON.stringify(data);
+    localStorage.setItem('data', request);
+
+    /*          const request = new XMLHttpRequest();
+                request.open('POST', 'http://localhost:3000/points');
+                request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                request.send(json);
+    */
+
+};
+
 window.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('data', JSON.stringify(initialData));
     requestGET();
+    createPoint(data);
 });
 
 let onPathClick = (e) => {
-
     const target = e.target;
-/*
-    console.log(target);
-    console.log(e.currentTarget);
-*/
+    contextMenu.classList.add('hidden');
 
-////////////////////////// elem motion //////////////////////////
+////////////////////////// add elem on path //////////////////////////
 
-    if (target.matches('.motion__elem')) {
+    if (target == motionPath && settingsMenu.classList.contains('hidden')) {
 
-        target.addEventListener('mousedown', function (e) {
+        let newPoint = similarPointTemplate.cloneNode(true);
+        numberPoints++;
+        requestPOST(e);
+
+        newPoint.querySelector('.point__name').textContent = numberPoints;
+        newPoint.querySelector('.point__radius2').style.width = data[data.length-1].radius2 + 'px';
+        newPoint.querySelector('.point__radius2').style.height = data[data.length-1].radius2 + 'px';
+        newPoint.querySelector('.point__radius1').style.width = data[data.length-1].radius1 + 'px';
+        newPoint.querySelector('.point__radius1').style.height = data[data.length-1].radius1 + 'px';
+        newPoint.querySelector('.point__radius2').style.backgroundImage = `radial-gradient(circle closest-side at ${(data[data.length-1].radius2)/2}px ${(data[data.length-1].radius2)/2}px, rgba(0, 124, 33, 0.8) 0%, rgba(0, 124, 33, 0.2))`;
+        console.log(newPoint.querySelector('.point__radius2').style.backgroundImage);
+
+        newPoint.style.top = e.clientY - (data[data.length-1].radius2)/2 + 'px';
+        newPoint.style.left = e.clientX - (data[data.length-1].radius2)/2 + 'px';
+
+        motionPath.appendChild(newPoint);
+
+    }
+
+    ////////////////////////// elem motion //////////////////////////
+
+    else if (target.closest('.motion__elem')) {
+        motionTarget = target.closest('.motion__elem');
+        motionTarget.addEventListener('mousedown', function (e) {
             e.preventDefault();
             var startCoords = {
                 x: e.clientX,
@@ -118,8 +160,8 @@ let onPathClick = (e) => {
                     y: e.clientY
                 };
 
-                target.style.top = (target.offsetTop - shift.y) + 'px';
-                target.style.left = (target.offsetLeft - shift.x) + 'px';
+                motionTarget.style.top = (motionTarget.offsetTop - shift.y) + 'px';
+                motionTarget.style.left = (motionTarget.offsetLeft - shift.x) + 'px';
             };
 
             var onMouseUp = function (e) {
@@ -131,70 +173,96 @@ let onPathClick = (e) => {
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
         });
+    }
+}
 
-    };
+let onPointRightClick = (e) => {
+    e.preventDefault();
+    const target = e.target;
+    if ((target.querySelector('.point__center') !== null) || (target.classList.contains('point__center'))) {
+        saveTarget = target;
+        if (contextMenu.classList.contains('hidden')) {
+            contextMenu.style.top = `${e.clientY}px`;
+            contextMenu.style.left = `${e.clientX}px`;
+            contextMenu.classList.remove('hidden');
 
-////////////////////////// show menu //////////////////////////
+        } else {
+            contextMenu.classList.add('hidden');
+        }
+    }
+}
 
-    if (target.matches('.point')) {
-        target.addEventListener('contextmenu', function (e) {
-            if (formWrapper.classList.contains('hidden')) {
-                formWrapper.classList.remove('hidden');
-            } else {
-                formWrapper.classList.add('hidden');
-            }
-        });
-    };
+let onContextMenuClick = (e) => {
 
-////////////////////////// add elem on path //////////////////////////
+    const target = e.target;
+    if (target.classList.contains('context-menu__back')) {
+        contextMenu.classList.add('hidden');
+    }
+    if (target.classList.contains('context-menu__open-setting')) {
+        if (settingsMenu.classList.contains('hidden')) {
+            settingsMenu.style.top = `${e.clientY}px`;
+            settingsMenu.style.left = `${e.clientX}px`;
+            settingsMenu.classList.remove('hidden');
 
-    if (target == motionPath) {
+        } else {
+            settingsMenu.classList.add('hidden');
+        }
+    }
+    if (target.classList.contains('context-menu__delete-point')) {
+        requestDELETE(saveTarget);
+        let domPointToDelete = saveTarget.closest('.motion__elem');
+        domPointToDelete.remove();
+        contextMenu.classList.add('hidden');
+    }
+}
 
-        let newPoint = similarPointTemplate.cloneNode(true);
-        numberPoints++;
 
-        newPoint.querySelector('.point__name').textContent = numberPoints;
-        newPoint.querySelector('.point__radius2').style.width = data[data.length - 1].radius2 + 'px';
-        newPoint.querySelector('.point__radius2').style.height = data[data.length - 1].radius2 + 'px';
-        newPoint.querySelector('.point__radius1').style.width = data[data.length - 1].radius1 + 'px';
-        newPoint.querySelector('.point__radius1').style.height = data[data.length - 1].radius1 + 'px';
-        newPoint.style.top = e.clientY - (data[data.length - 1].radius2) / 2 + 'px';
-        newPoint.style.left = e.clientX - (data[data.length - 1].radius2) / 2 + 'px';
+////////////////////////// setup points parameters from settings menu//////////////////////////////
 
+let settingsForm = document.querySelector('.form');
+let onSentFormClick = () => {
+    let settingsElemId = Number(saveTarget.querySelector('.point__name').textContent);
+    let settingPoint = data.filter((item) => item.id == settingsElemId);
+    settingPoint.name = settingsForm.querySelector('.form-settings__name').value;
+    settingPoint.radius1 = settingsForm.querySelector('.form-settings__radius1').value;
+    settingPoint.radius2 = settingsForm.querySelector('.form-settings__radius2').value;
+    settingPoint.signal_quality1 = settingsForm.querySelector('.form-settings__signal1').value;
+    settingPoint.signal_quality2 = settingsForm.querySelector('.form-settings__signal2').value;
 
-        motionPath.appendChild(newPoint);
+    let changedData = data.map(p=>{
+        if (p.id == settingsElemId) {
+            return ({
+                id: settingsElemId,
+                name: settingPoint.name,
+                radius1: settingPoint.radius1,
+                radius2: settingPoint.radius2,
+                signal_quality1: settingPoint.signal_quality1,
+                signal_quality2: settingPoint.signal_quality2,
+                top_position: p.top_position,
+                left_position: p.left_position
+            })
+        }
+        return p;
+    });
+    localStorage.setItem('data', JSON.stringify(changedData));
+    createPoint(changedData);
+    settingsMenu.classList.add('hidden');
 
-        function requestPOST(e) {
+}
 
-            let obj = {
-                name: numberPoints,
-                radius1: data[data.length - 1].radius1,
-                radius2: data[data.length - 1].radius2,
-                signal_quality1: 80,
-                signal_quality2: 50,
-                top_position: e.clientY - (data[data.length - 1].radius2) / 2,
-                left_position: e.clientX - (data[data.length - 1].radius2) / 2,
-                id: numberPoints
-            };
+let onCloseFormButtonClick = () => {
+    settingsMenu.classList.add('hidden');
+}
 
-            const points = JSON.parse(localStorage.getItem('data')).points;
-            const dataCome = JSON.parse(localStorage.getItem('data'));
-            points.push(obj);
-            let request = JSON.stringify(
-                {
-                    points: points
-                }
-            );
-            localStorage.setItem('data',request);
-
- 
-            /* const request = new XMLHttpRequest();
-            request.open('POST', 'http://localhost:3000/points');
-            request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-            request.send(json); */
-        };
-        requestPOST(e);
-    };
-};
-
+let body = document.querySelector('.body');
+let onBodyClick = () => {
+    contextMenu.classList.add('hidden');
+}
+closeFormButton.addEventListener('click', onCloseFormButtonClick)
+saveFormButton.addEventListener('click', onSentFormClick)
+body.addEventListener('click', onBodyClick);
+contextMenu.addEventListener('click', (e) => onContextMenuClick(e));
+motionPath.addEventListener('contextmenu', (e) => onPointRightClick(e));
 motionPath.addEventListener('click', onPathClick);
+
+
