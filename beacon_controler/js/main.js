@@ -5,7 +5,11 @@ let settingsMenu = document.querySelector('.settings-menu');
 let contextMenu = document.querySelector('.context-menu');
 let saveFormButton = motionPath.querySelector('#save-form-button');
 let closeFormButton = motionPath.querySelector('#close-form-button')
-let defaultValuesForm = document.querySelector('.default-values');
+let defaultValuesForm = document.querySelector('.default-values__menu');
+let clearPathButton = document.querySelector('.default-values__delete-button');
+let settingsForm = document.querySelector('.form');
+let showInfoButton = document.querySelector('.default-values__title');
+let infoText = document.querySelector('.default-values__info-inner');
 let numberPoints;
 let saveTarget;
 let data;
@@ -34,7 +38,7 @@ function createPoint(data) {
 		</div>`;
         motionPath.appendChild(point);
     });
-};
+}
 
 function requestGET() {
     let request = localStorage.getItem('data');
@@ -45,41 +49,14 @@ function requestGET() {
         numberPoints = data[data.length - 1].id
     }
 
-
-    /*
-    const request = new XMLHttpRequest();
-        request.open('GET', 'http://localhost:3000/points');
-        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        request.send();
-        request.addEventListener('load', function () {
-            if (request.status == 200) {
-                data = JSON.parse(request.response);
-                createPoint(data);
-                console.log(data);
-                numberPoints = data.length;
-
-            } else {
-                console.error('Ошибка');
-            }
-        });
-        */
 }
 
-function requestDELETE(target) {
-
-    let deleteElemId = Number(target.querySelector('.point__name').textContent);
-    let dataForSlice = (JSON.parse(localStorage.getItem('data')));
-    let slicedPoints = dataForSlice.filter((item) => item.id !== deleteElemId);
-    localStorage.setItem('data', JSON.stringify(slicedPoints));
-
-}
 
 
 function requestPOST(e, name = numberPoints, radius1 = defaultValuesForm.querySelector('#radius1').value,
                      radius2 = defaultValuesForm.querySelector('#radius2').value,
                      signal1 = defaultValuesForm.querySelector('#signal1').value,
                      signal2 = defaultValuesForm.querySelector('#signal2').value) {
-
 
     let obj = {
         id: numberPoints,
@@ -96,18 +73,16 @@ function requestPOST(e, name = numberPoints, radius1 = defaultValuesForm.querySe
     let request = JSON.stringify(data);
     localStorage.setItem('data', request);
 
-    /*          const request = new XMLHttpRequest();
-                request.open('POST', 'http://localhost:3000/points');
-                request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-                request.send(json);
-    */
+}
 
-};
+function requestDELETE(target) {
 
-window.addEventListener('DOMContentLoaded', () => {
-    requestGET();
-    createPoint(data);
-});
+    let deleteElemId = Number(target.querySelector('.point__name').textContent);
+    let dataForSlice = (JSON.parse(localStorage.getItem('data')));
+    let slicedPoints = dataForSlice.filter((item) => item.id !== deleteElemId);
+    localStorage.setItem('data', JSON.stringify(slicedPoints));
+
+}
 
 let onPathClick = (e) => {
     const target = e.target;
@@ -126,7 +101,7 @@ let onPathClick = (e) => {
         newPoint.querySelector('.point__radius2').style.height = data[data.length-1].radius2 + 'px';
         newPoint.querySelector('.point__radius1').style.width = data[data.length-1].radius1 + 'px';
         newPoint.querySelector('.point__radius1').style.height = data[data.length-1].radius1 + 'px';
-        newPoint.querySelector('.point__radius2').style.backgroundImage = `radial-gradient(circle closest-side at ${(data[data.length-1].radius2)/2}px ${(data[data.length-1].radius2)/2}px, rgba(0, 124, 33, 0.8) 0%, rgba(0, 124, 33, 0.2))`;
+        newPoint.querySelector('.point__radius2').style.backgroundImage = `radial-gradient(circle closest-side at ${(data[data.length-1].radius2)/2}px ${(data[data.length-1].radius2)/2}px, rgba(0, 124, 33, ${(data[data.length-1].signal_quality1)/100}) 0%, rgba(0, 124, 33, ${(data[data.length-1].signal_quality2)/100}))`;
         console.log(newPoint.querySelector('.point__radius2').style.backgroundImage);
 
         newPoint.style.top = e.clientY - (data[data.length-1].radius2)/2 + 'px';
@@ -140,6 +115,7 @@ let onPathClick = (e) => {
 
     else if (target.closest('.motion__elem')) {
         motionTarget = target.closest('.motion__elem');
+
         motionTarget.addEventListener('mousedown', function (e) {
             e.preventDefault();
             var startCoords = {
@@ -162,6 +138,25 @@ let onPathClick = (e) => {
 
                 motionTarget.style.top = (motionTarget.offsetTop - shift.y) + 'px';
                 motionTarget.style.left = (motionTarget.offsetLeft - shift.x) + 'px';
+
+                let settingsElemId = Number(target.querySelector('.point__name').textContent);
+                let changedData = data.map(p=>{
+                    if (p.id == settingsElemId) {
+                        return ({
+                            id: p.id,
+                            name: p.sname,
+                            radius1: p.radius1,
+                            radius2: p.radius2,
+                            signal_quality1: p.signal_quality1,
+                            signal_quality2: p.signal_quality2,
+                            top_position: (motionTarget.offsetTop - shift.y),
+                            left_position:  (motionTarget.offsetLeft - shift.x)
+                        })
+                    }
+                    return p;
+                });
+                localStorage.setItem('data', JSON.stringify(changedData));
+
             };
 
             var onMouseUp = function (e) {
@@ -169,14 +164,17 @@ let onPathClick = (e) => {
                 document.removeEventListener('mousemove', onMouseMove);
                 document.removeEventListener('mouseup', onMouseUp)
             }
-
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
         });
+
     }
 }
 
+////////////////////////////// context menu ///////////////////////////////////////////////
+
 let onPointRightClick = (e) => {
+
     e.preventDefault();
     const target = e.target;
     if ((target.querySelector('.point__center') !== null) || (target.classList.contains('point__center'))) {
@@ -216,10 +214,8 @@ let onContextMenuClick = (e) => {
     }
 }
 
+////////////////////////// setup points parameters from settings menu //////////////////////////////
 
-////////////////////////// setup points parameters from settings menu//////////////////////////////
-
-let settingsForm = document.querySelector('.form');
 let onSentFormClick = () => {
     let settingsElemId = Number(saveTarget.querySelector('.point__name').textContent);
     let settingPoint = data.filter((item) => item.id == settingsElemId);
@@ -245,8 +241,28 @@ let onSentFormClick = () => {
         return p;
     });
     localStorage.setItem('data', JSON.stringify(changedData));
+    while (motionPath.firstChild) {
+        motionPath.removeChild(motionPath.firstChild);
+    }
     createPoint(changedData);
     settingsMenu.classList.add('hidden');
+}
+
+let onShowInfoClick = () => {
+    if (infoText.classList.contains('hidden')) {
+        infoText.classList.remove('hidden')
+    } else {
+        infoText.classList.add('hidden')
+    }
+
+}
+
+let onClearPathButtonClick = () => {
+    numberPoints = 0;
+    while (motionPath.firstChild) {
+        motionPath.removeChild(motionPath.firstChild);
+    }
+    localStorage.removeItem('data');
 
 }
 
@@ -255,10 +271,22 @@ let onCloseFormButtonClick = () => {
 }
 
 let body = document.querySelector('.body');
+
 let onBodyClick = () => {
     contextMenu.classList.add('hidden');
 }
-closeFormButton.addEventListener('click', onCloseFormButtonClick)
+
+
+/////////////////////////////////// events on page ///////////////////////////////////////////
+
+window.addEventListener('DOMContentLoaded', () => {
+    requestGET();
+    createPoint(data);
+});
+
+showInfoButton.addEventListener('click', onShowInfoClick);
+clearPathButton.addEventListener('click', onClearPathButtonClick);
+closeFormButton.addEventListener('click', onCloseFormButtonClick);
 saveFormButton.addEventListener('click', onSentFormClick)
 body.addEventListener('click', onBodyClick);
 contextMenu.addEventListener('click', (e) => onContextMenuClick(e));

@@ -60,16 +60,15 @@ body {
   background-color: lightblue;
 }
 
+.motion__title {
+  text-align: center;
+}
 .motion__path {
   border: 3px solid black;
   height: 68vh;
 }
 .motion__elem {
   position: absolute;
-}
-
-.path-title {
-  text-align: center;
 }
 
 .point {
@@ -175,11 +174,29 @@ body {
 }
 
 .default-values {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.default-values__info {
+  width: 700px;
+}
+.default-values__menu {
   margin-bottom: 15px;
+}
+.default-values__title {
+  text-align: center;
+  cursor: pointer;
+}
+.default-values__title:hover {
+  color: lightblue;
 }
 .default-values__input {
   font-size: 20px;
   margin-bottom: 5px;
+}
+.default-values__delete-button {
+  margin-left: 25%;
 }
 
 .context-menu {

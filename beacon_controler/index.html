@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Beacon Controller</title>
     <link rel="stylesheet" href="css/style.css">
@@ -18,28 +18,56 @@
 </header>
 
 <section class="motion section">
-    <p class="header__description">
-        Default parameters:
-    </p>
+
     <div class="default-values">
-        <div class="default-values__item">
-            <label class="default-values__label" for="radius1">First coverage area</label>
-            <input class="default-values__input" id="radius1" name="radius1" value="50">
+        <div class="default-values__settings default-values__box">
+            <p class="default-values__description">
+                Default parameters:
+            </p>
+            <div class="default-values__menu">
+                <div class="default-values__item">
+                    <div class="default-values__label" for="radius1">First coverage area</div>
+                    <input class="default-values__input" id="radius1" name="radius1" value="50">
+                </div>
+                <div class="default-values__item">
+                    <div class="default-values__label" for="radius2">Second coverage area</div>
+                    <input class="default-values__input" id="radius2" name="radius2" value="150">
+                </div>
+                <div class="default-values__item">
+                    <div class="default-values__label" for="signal1">First zone signal level</div>
+                    <input class="default-values__input" id="signal1" name="signal1" value="70">
+                </div>
+                <div class="default-values__item">
+                    <div class="default-values__label" for="signal2">Second zone signal level</div>
+                    <input class="default-values__input" id="signal2" name="signal2" value="30">
+                </div>
+            </div>
         </div>
-        <div class="default-values__item">
-            <label class="default-values__label" for="radius2">Second coverage area</label>
-            <input class="default-values__input" id="radius2" name="radius2" value="200">
+        <div class="default-values__delete default-values__box">
+            <p class="default-values__description">
+                Click to clear motion path:
+            </p>
+            <button class="default-values__delete-button button">Clear path</button>
         </div>
-        <div class="default-values__item">
-            <label class="default-values__label" for="signal1">First zone signal level</label>
-            <input class="default-values__input" id="signal1" name="signal1" value="80">
-        </div>
-        <div class="default-values__item">
-            <label class="default-values__label" for="signal2">Second zone signal level</label>
-            <input class="default-values__input" id="signal2" name="signal2" value="40">
+        <div class="default-values__info default-values__box">
+            <p class="default-values__title">Show info</p>
+            <div class="default-values__info-inner hidden">
+                <p class="default-values__info-text">
+                    Hello, this program was made to control signal sources
+                    (for example, it can be Wi-Fi modems located on a building
+                    plan or radio signal sources on a terrain map).
+                </p>
+                <p class="default-values__instructions-text">
+                    Points appear automatically when you click on the motion path;
+                    Movement a point - click on it, then click and hold the key;
+                    Set the signal parameters - use the "default parameters" menu or the context menu, which is called
+                    by right-clicking on a point;
+                </p>
+            </div>
         </div>
     </div>
-    <p class="path-title">
+
+    <p class="motion__title">
         Points path
     </p>
     <div class="motion__path">
@@ -76,7 +104,7 @@
                 </div>
                 <div class="form__item">
                     <label class="form__label">Second coverage area</label>
-                    <input class="form__input form-settings__radius2" value="100">
+                    <input class="form__input form-settings__radius2" value="150">
                 </div>
                 <div class="form__item">
                     <label class="form__label">First zone signal level</label>
@@ -93,10 +121,6 @@
         </div>
     </div>
 </section>
-
-<footer class="footer">
-
-</footer>
 
 <script src="js/main.js"></script>
 </body>
